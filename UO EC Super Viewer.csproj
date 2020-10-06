@@ -159,9 +159,6 @@
     <Content Include="AnimationsCollection - KR.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="AnimationsCollection.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <None Include="Images\mp3.png" />
     <Content Include="AudioCollection.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
