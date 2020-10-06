@@ -1,0 +1,199 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{44F84189-2509-4CC3-AAF3-3E053AB182D2}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>UO_EC_Super_Viewer</RootNamespace>
+    <AssemblyName>UO EC Super Viewer</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>UO_EC_Super_Viewer.Program</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="NAudio, Version=1.10.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\NAudio.1.10.0\lib\net35\NAudio.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AudioData\AudioData.cs" />
+    <Compile Include="ExportVD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExportVD.Designer.cs">
+      <DependentUpon>ExportVD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HuePicker.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HuePicker.Designer.cs">
+      <DependentUpon>HuePicker.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Imaging\OctreeNode.cs" />
+    <Compile Include="Imaging\OctreeQuantizer.cs" />
+    <Compile Include="ItemData\ItemAminationData.cs" />
+    <Compile Include="ItemData\ItemData.cs" />
+    <Compile Include="ItemData\ItemSittingAnimationData.cs" />
+    <Compile Include="ItemData\MultiItem.cs" />
+    <Compile Include="ItemData\MultiItemPart.cs" />
+    <Compile Include="ItemTooltip.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ItemTooltip.Designer.cs">
+      <DependentUpon>ItemTooltip.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MobileData\ColourEntry.cs" />
+    <Compile Include="Imaging\DDSImageParser.cs" />
+    <Compile Include="Imaging\DirectBitmap.cs" />
+    <Compile Include="MobileData\Hue.cs" />
+    <Compile Include="Splash.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Splash.Designer.cs">
+      <DependentUpon>Splash.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UOECSuperViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UOECSuperViewer.Designer.cs">
+      <DependentUpon>UOECSuperViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MobileData\FrameEntry.cs" />
+    <Compile Include="MobileData\Mobile.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="MobileData\UOAnimation.cs" />
+    <EmbeddedResource Include="ExportVD.resx">
+      <DependentUpon>ExportVD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HuePicker.resx">
+      <DependentUpon>HuePicker.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ItemTooltip.resx">
+      <DependentUpon>ItemTooltip.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Splash.resx">
+      <DependentUpon>Splash.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UOECSuperViewer.resx">
+      <DependentUpon>UOECSuperViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include=".editorconfig" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AnimationsCollection - EC.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AnimationsCollection - KR.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="AnimationsCollection.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="Images\mp3.png" />
+    <Content Include="AudioCollection.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="bin\Debug\Test Spritesheets\flute.wav" />
+    <Content Include="icon.ico" />
+    <Content Include="Images\East.tiff" />
+    <None Include="Images\folder.png" />
+    <Content Include="Images\gear.png" />
+    <Content Include="Images\icon.ico" />
+    <Content Include="Images\loading.gif" />
+    <Content Include="Images\North-East.tiff" />
+    <Content Include="Images\North-West.tiff" />
+    <Content Include="Images\North.tiff" />
+    <Content Include="Images\resize.png" />
+    <Content Include="Images\South-East.tiff" />
+    <Content Include="Images\South-West.tiff" />
+    <Content Include="Images\South.tiff" />
+    <Content Include="Images\splash.png" />
+    <None Include="Images\wav.png" />
+    <Content Include="Images\West.tiff" />
+    <Content Include="MultiCollection.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="Images\reload.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Mythic.Package\Mythic.Package.csproj">
+      <Project>{1f230513-01f3-462a-94ff-836620aab0d7}</Project>
+      <Name>Mythic.Package</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

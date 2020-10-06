@@ -1,0 +1,4 @@
+﻿[*.cs]
+
+# CS0169: Il campo 'FrameEntry.m_VDFrameHeader' non viene mai usato
+dotnet_diagnostic.CS0169.severity = none

@@ -1,0 +1,69 @@
+0 walk
+1 walk 2h
+2 run
+3 run 2h
+4 idle
+5 idle 2h
+6 fidget
+7 combat 1h
+8 combat 2h
+9 attack 1h slash
+10 attack 1h pierce
+11 attack 1h bash
+12 attack 2h bash
+13 attack 2h slash
+14 attack 2h pierce
+15 combat 1h walk
+16 spell 1
+17 spell 2
+18 attack bow
+19 attack crossbow
+20 get hit 1h
+21 die backward
+22 die forward
+23 horse walk
+24 horse run
+25 horse idle
+26 horse attack 1h
+27 horse attack bow
+28 horse attack crossbow
+29 horse attack 2h slash
+30 block shield
+31 punch
+32 bow emote
+33 salute armed emote
+34 drink emote
+35 combat 2h walk
+36 combat unarmed
+37 idle shield
+38 sit
+39 get hit 2h
+40 mining
+41 fidget combat 1h
+42 drink sit emote
+47 horse idle 2h
+48 horse get hit unarmed
+49 horse spell
+50 horse get hit 1h
+51 horse drink
+
+--GARGOYLE ONLY--
+60 fly
+61 land
+62 fly forward slow
+63 fly forward fast
+64 fly idle
+65 fly idle combat
+66 fly fidget
+67 fly fidget 2
+68 fly get hit
+69 fly and die backward
+70 fly and die forward
+71 fly attack 1h
+72 fly attack 2h
+73 fly attack boomerang
+74 fly get hit 1h
+75 fly spell 1
+76 fly spell 2
+77 fly get hit combat
+78 fly drink
