@@ -9,13 +9,6 @@ namespace Mythic.Package
 	/// </summary>
 	public class MythicPackageBlock
 	{
-		#region UpdateProgress
-		/// <summary>
-		/// Invoked when 1 file is opened, saved or unpacked.
-		/// </summary>
-		public static event UpdateProgress UpdateProgress;
-		#endregion
-
 		#region Size
 		/// <summary>
 		/// Size of the block header.
@@ -170,9 +163,6 @@ namespace Mythic.Package
 
 				if ( file.DataBlockAddress != 0 )
 					m_Files.Add( file );
-
-                //change by nolok
-				//UpdateProgress( parent.Blocks.Count * parent.Header.BlockSize + index, parent.Header.FileCount );
 			}
 			while ( index < m_FileCount );
 		}
@@ -324,16 +314,13 @@ namespace Mythic.Package
 				m_Files[ i ].Save( writer );
 			}
 
-			byte[] empty = new byte[ MythicPackageFile.Size * ( m_Parent.Header.BlockSize - m_FileCount ) ];
+			byte[] empty = new byte[ MythicPackageFile.Size * m_FileCount ];
 			Array.Clear( empty, 0, empty.Length );
 			writer.Write( empty );
 
 			for ( int i = 0; i < m_Files.Count; i++ )
 			{
 				m_Files[ i ].SaveData( reader, writer );
-
-				if ( UpdateProgress != null )
-					UpdateProgress( m_Parent.Header.FileCount + m_Index * m_Parent.Header.BlockSize + i, m_Parent.Header.FileCount * 2 );
 			}
 
 			m_Modified = false;
@@ -353,9 +340,6 @@ namespace Mythic.Package
 			for ( int i = 0; i < m_Files.Count; i++ )
 			{
 				m_Files[ i ].UpdateOffsets( ref pointer );
-
-				if ( UpdateProgress != null )
-					UpdateProgress( m_Index * m_Parent.Header.BlockSize + i, m_Parent.Header.FileCount * 2 );
 			}
 
 			if ( m_Index < m_Parent.Blocks.Count - 1 )
@@ -380,9 +364,6 @@ namespace Mythic.Package
 					for ( int i = 0; i < m_Files.Count; i++ )
 					{
 						m_Files[ i ].Unpack( source, folder, fullPath );
-
-						if ( UpdateProgress != null )
-							UpdateProgress( m_Index * m_Parent.Header.BlockSize + i, m_Parent.Header.FileCount );
 					}
 				}
 			}
@@ -400,9 +381,6 @@ namespace Mythic.Package
 				throw new ArgumentOutOfRangeException( "index" );
 
 			m_Files[ index ].Unpack( folder, fullPath );
-
-			if ( UpdateProgress != null )
-				UpdateProgress( m_Index * m_Parent.Header.BlockSize + index, m_Parent.Header.FileCount );
 		}
 
 		/// <summary>
@@ -416,9 +394,6 @@ namespace Mythic.Package
 			for ( int i = 0; i < m_Files.Count; i++ )
 			{
 				m_Files[ i ].Unpack( source, folder, fullPath );
-
-				if ( UpdateProgress != null )
-					UpdateProgress( m_Index * m_Parent.Header.BlockSize + i, m_Parent.Header.FileCount );
 			}
 		}
 		#endregion

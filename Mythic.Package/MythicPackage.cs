@@ -5,11 +5,6 @@ using System.Collections.Generic;
 namespace Mythic.Package
 {
 	/// <summary>
-	/// Updates progress bar.
-	/// </summary>
-	public delegate void UpdateProgress( int current, int max );
-
-	/// <summary>
 	/// Type of compression.
 	/// </summary>
 	public enum CompressionFlag : short
@@ -19,7 +14,7 @@ namespace Mythic.Package
 		/// </summary>
 		None	= 0x0,
 
-		/// <summary>
+		/// <summary>>
 		/// Zlib.
 		/// </summary>
 		Zlib	= 0x1
